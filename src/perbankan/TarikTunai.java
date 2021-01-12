@@ -22,12 +22,30 @@ public class TarikTunai extends Transaction {
     @Override
     public void execute() {
         NasabahData nasabahData = getNasabahData();
-        System.out.println(""+nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getType());
         if (ambil < nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getSaldo()) {
-            int saldo = nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getSaldo() - ambil;
-            System.out.println(""+saldo);
-            nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].setSaldo(saldo);
-//            //exportData();
+            if(("Platinum").equals(nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getType()) && ambil <= 20000000){
+                int saldo = nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getSaldo() - ambil;
+                System.out.println(""+saldo);
+                nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].setSaldo(saldo);
+                JOptionPane.showMessageDialog(null, "Penarikan Tunai Telah Berhasil");
+                nasabahData.exportData();
+            }
+            else if(("Gold").equals(nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getType()) && ambil <= 10000000){
+                int saldo = nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getSaldo() - ambil;
+                System.out.println(""+saldo);
+                nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].setSaldo(saldo);
+                JOptionPane.showMessageDialog(null, "Penarikan Tunai Telah Berhasil");
+                nasabahData.exportData();
+            }else if(("Silver").equals(nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getType()) && ambil <= 5000000){
+                int saldo = nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getSaldo() - ambil;
+                System.out.println(""+saldo);
+                nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].setSaldo(saldo);
+                JOptionPane.showMessageDialog(null, "Penarikan Tunai Telah Berhasil");
+                nasabahData.exportData();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Penarikan Tunai Gagal !! Akun mencapai Limit ");
+            }
         } else {
            JOptionPane.showMessageDialog(null, "Maaf saldo anda tidak mencukupi");
         }

@@ -21,6 +21,7 @@ public class SimpanUang extends Transaction {
         NasabahData nasabahData = getNasabahData();
         int saldo = nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].getSaldo() + addUang;
         nasabahData.getArrTabungan()[nasabahData.getCurrentAccount()].setSaldo(saldo);
+        nasabahData.exportData();
     }
     
 }

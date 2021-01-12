@@ -1,5 +1,7 @@
-1234/1234/Feri/100/Platinum
-321/321/Dany/50000/Platinum
-10/89/Nama/50/Platinum
-12/pin/Nama/90/Platinum
-9090/9090/Icha/10000/Gold
+1111/1111/Feri Afrianto/49800000/Platinum
+2222/2222/Dany Hermawan/70050000/Platinum
+3333/3333/Fabyan Kindarya/75225050/Silver
+4444/4444/Yowanda Friski/65235090/Gold
+5555/5555/Ivan Aulia/15410000/Gold
+6666/6666/Zaid Abdillah/115000/Platinum
+7777/7777/Fahmi Maulana/20000000/Platinum
